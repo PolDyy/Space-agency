@@ -1,0 +1,33 @@
+.bg-gray-800 {
+  background-color: #3C3C3C;
+}
+.content {
+  margin: auto;
+  padding: 30px;
+  width: 100%;
+  max-width: 992px;
+  box-sizing: border-box;
+}
+.item-nav {
+  max-width: 160px;
+  padding: 2%;
+}
+.item-for {
+  display: block;
+  margin: 10px auto;
+
+}
+.slick-slide{
+  width: 160px;
+}
+
+@media (max-width: 991px) {
+  .slick-slide{
+    width: 80px;
+    height: 80px;
+  }
+  .item-nav__adaptive{
+    max-width: 80px;
+    max-height: 80px;
+  }
+}

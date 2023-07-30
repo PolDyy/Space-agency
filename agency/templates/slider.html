@@ -1,0 +1,81 @@
+{% load thumbnail %}
+<div id="photos" class="container-fluid text-center text-light bg-gray-800">
+  <h2 class="pt-5">Фотографии</h2>
+  <div class="content">
+    <div class="slider slider-for text-center">
+      {% for item in slider_items %} {% if width < 992 %}
+      <div>
+        <img
+          src="{% thumbnail item.image 340x340 crop %}"
+          alt="Slider Image"
+          class="item-for item-for__adaptive rounded-3"
+          data-bs-toggle="modal"
+          data-bs-target="#fullscreenModal"
+        />
+      </div>
+      {% else %}
+
+      <div>
+        <img
+          src="{% thumbnail item.image 750x420 crop %}"
+          alt="Slider Image"
+          class="item-for item-for__adaptive rounded-3"
+          data-bs-toggle="modal"
+          data-bs-target="#fullscreenModal"
+        />
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+    <div class="slider slider-nav">
+      {% for item in slider_items %} {% if width < 992 %}
+      <div>
+        <img
+          src="{% thumbnail item.image 80x80 crop %}"
+          alt="Slider Image"
+          class="item-nav item-nav__adaptive rounded-3"
+        />
+      </div>
+      {% else %}
+      <div>
+        <img
+          src="{% thumbnail item.image 160x160 crop %}"
+          alt="Slider Image"
+          class="item-nav item-nav__adaptive rounded-3"
+        />
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="fullscreenModal"
+  tabindex="-1"
+  aria-labelledby="fullscreenModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body">
+        <div id="fullscreenSlider" class="slick-slider">
+          {% for item in slider_items %}
+          <div>
+            <img
+              src="{% thumbnail item.image 750x420 crop %}"
+              alt="Fullscreen Slider Image"
+              class="item-for rounded-3"
+            />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+  </div>
+</div>

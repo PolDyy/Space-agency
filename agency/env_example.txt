@@ -1,0 +1,7 @@
+SECRET_KEY = 'YOUR KEY'
+DEBUG = 0 or 1
+
+MYSQL_DATABASE = 'agency'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'agency321'
+MYSQL_ROOT_PASSWORD = 'agency321'
